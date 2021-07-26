@@ -39,10 +39,11 @@ def mt_area(f,a,b,dx):
   n = 50
   x = np.linspace(a, b, n + 1)
   y = f(x)
-  dx = (b - a)/ n
   y_dir = y[1:]
   y_esq = y[:-1]
-  T = dx/2* np.sum(y_dir, y_esq)
+  dx = (b - a)/ n
+  t_integration = dx/2 * np.sum(y_dir, y_esq)
+  return t_integration
 
 
   
