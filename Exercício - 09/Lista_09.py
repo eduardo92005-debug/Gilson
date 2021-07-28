@@ -56,6 +56,44 @@ class Reta:
     ''' Coloque a descrição aqui
     '''
     # escreva aqui o construtor:
+    def __init__(self, a, b):
+      self.__a = a
+      self.__b = b
+    #getters
+    def get_linear(self):
+      return self.__b
+    def get_angular(self):
+      return self.__a
+    def validar_sinal(self):
+      linear = self.__b
+      sinal = '+' if linear >= 0 else '-'
+      return sinal
+    def reta_generica(self):
+      angular = self.__a
+      linear = self.__b
+      sinal = self.validar_sinal()
+      reta = "Reta %.1fx "%(angular) + sinal + " %.1f"%(linear)
+      return reta
+    def calc(self,x):
+      x = float(input('x:\t'))
+      angular = self.__a
+      linear = self.__b
+      y = angular*x + linear
+      resposta = 'resultado: %.1f'%y
+      return resposta
+      
+    def area(self):
+      x0 = float(input('início do intervalo:\t'))
+      x1 = float(input('final do intervalo:\t'))
+      angular = self.__a
+      linear = self.__b
+      b = x1 - x0
+      h = angular * b
+      y0 = angular*x0 + linear
+      y1 = angular*x1 + linear
+      A = 0.5*(y1+y0)*(x1 - x0)
+      return A
+
     
     # escreva aqui a representação para o print
     
@@ -68,25 +106,29 @@ while True:
     opcao=int(opcao)
     if opcao==1:
       # criar reta
-      a=float(input('a: '))
-      b=float(input('b: '))
+      a=float(input('a:\t'))
+      b=float(input('b:\t'))
       r=Reta(a,b)
-      print(r)
+      print(r.reta_generica())
     elif opcao==2:
       # calcula f(x) dado x
-      
+      pass
     elif opcao==3:
       # calcula área dado intervalo
-      
+      a=float(input('a:\t'))
+      b=float(input('b:\t'))
+      r=Reta(a,b)
+      print(r.area())
+      pass
     elif opcao==4:
       # calcula perpendicular passando por ponto
-      
+      pass 
     elif opcao==5:
       # calcula interseção com outra reta
-      
+      pass
     elif opcao==6:
       # calcula distância ao ponto
-      
+      pass
     elif opcao==0:
       break
     else:
