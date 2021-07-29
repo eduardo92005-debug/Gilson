@@ -51,6 +51,17 @@ class Ponto:
     dist() : calcula a distância para outro ponto
     '''
     # copie o que foi dado em aula aqui
+    def __init__(self,x,y):
+    	self.__x = x
+    	self.__y = y
+    def dist(self):
+    	xb = float(input('x:\t'))
+    	yb = float(input('y:\t'))
+    	xa = self.__x
+    	ya = self.__y
+    	dist = sqrt((xb - xa)**2 + (yb - ya)**2)
+    	resposta = "resultado: %.1f"%dist
+    	return resposta
     
 class Reta:
     ''' Coloque a descrição aqui
@@ -64,16 +75,17 @@ class Reta:
       return self.__b
     def get_angular(self):
       return self.__a
-    def validar_sinal(self):
-      linear = self.__b
+    def validar_sinal(self,b):
+      linear = b
       sinal = '+' if linear >= 0 else '-'
       return sinal
     def reta_generica(self):
       angular = self.__a
       linear = self.__b
-      sinal = self.validar_sinal()
+      sinal = self.validar_sinal(linear)
       reta = "Reta %.1fx "%(angular) + sinal + " %.1f"%(linear)
       return reta
+      
     def calc(self,x):
       x = float(input('x:\t'))
       angular = self.__a
@@ -93,6 +105,33 @@ class Reta:
       y1 = angular*x1 + linear
       A = 0.5*(y1+y0)*(x1 - x0)
       return A
+      
+     def perpendicular(self):
+       angular = self.__a
+       linear  = self.__b
+       mr = -angular/linear
+       mp = -1/(mr)
+       x = float(input('x:\t')))
+       y = float(input('y:\t'))
+       b = 1
+       c = -(mp*x + b*y)
+       linearp= c/b
+       sinal = self.validar_sinal(linear)
+       reta = "Reta %.1fx "%(mp) + sinal + " %.1f"%(linearp)
+       return reta
+      
+      def intersec(self):
+      	a_r = float(input('a:\t'))
+      	b_r = float(input('b:\t'))
+      	angular_s = self.__a
+      	linear_s = self.__b
+      	x = (linear_s - b_r)/(angular_s - a_r)
+      	y = angular_s*x + linear_s
+      	ponto = "Ponto em (%.1f,%.1f)"%(x,y)
+      	return ponto
+      	
+      	
+     	
 
     
     # escreva aqui a representação para o print
@@ -100,7 +139,9 @@ class Reta:
     # escreva aqui os demais métodos
 
 ##### principal: #####
+
 while True:
+  r = 0
   opcao=input('opção: ')
   try:
     opcao=int(opcao)
@@ -111,8 +152,7 @@ while True:
       r=Reta(a,b)
       print(r.reta_generica())
     elif opcao==2:
-      # calcula f(x) dado x
-      pass
+      print(r.calc())
     elif opcao==3:
       # calcula área dado intervalo
       a=float(input('a:\t'))
