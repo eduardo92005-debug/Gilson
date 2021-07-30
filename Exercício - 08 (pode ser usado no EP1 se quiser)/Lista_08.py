@@ -19,8 +19,13 @@ def Infectados(x,I0,r):
     
     Retorna: o número de infectados no dia x
     '''
-    #escreva a função aqui
-
+    #escreva a função aquiv
+    
+    if x == 1:
+      return I0
+    else:
+      return r**(x-2) + Infectados(x-1,I0,r)
+    
 ##### principal #####    
 def main():
   I0=int(input('infectados inicial: '))
@@ -29,5 +34,7 @@ def main():
   # complete o código
   Infect=Infectados(x,I0,r)
   print('resultado: %.1f'%Infect)
+  
+
   
 main()
