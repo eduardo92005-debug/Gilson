@@ -1,49 +1,54 @@
+##### Exercício 07 #####
 '''
-Módulo MinhasCurvas
-Este módulo contém funções para funções do exercício 07 da lista
-Além das funções do enunciado você pode colcar outras funções auxiliares se achar necessário
+    Neste exercício é utilizado um módulo chamado MinhasCurvas.py
+    Todas as funções estão no outro arquivo e não neste.
+    Este aquivo principal só testa as funções.
+    Não tem plot, mas se quiser visualizar pode usar os mesmos passos do exercício passado
+    Exemplo de execução deste programa:
+    
+    exemplo 1:
+    
+    Testa parábola (S/N)? S
+    Qual parábola? 1
+    x: 0
+    -18.00
+    Testa área (S/N)? N
+    
+    exemplo 2:
+    
+    Testa parábola (S/N)? N
+    Testa área (S/N)? S
+    Qual parabola? 1
+    a: 0
+    b: 5
+    dx: 0.1
+    Área: 65.33
 '''
-import numpy as np
+import MinhasCurvas as mc
 
-def parabola_generica(x,a=0,b=0,c=0):
-  '''Escreva aqui a descrição'''
-  #escreva aqui a função
-  parabola = a*(x**2) + b*x + c
-  f_x = parabola
-  return f_x
-
-def parabola1(x):
-  '''Escreva aqui a descrição'''
-  #escreva aqui a função
-  parabola = parabola_generica(x,a = 2, b = 0, c = -18)
-  f_x = parabola
-  return f_x
-
-def parabola2(x):
-  '''Escreva aqui a descrição'''
-  #escreva aqui a função
-  parabola = parabola_generica(x,a = 1, b = 4, c = 10)
-  f_x = parabola
-  return f_x
-
-def parabola3(x):
-  '''Escreva aqui a descrição'''
-  #escreva aqui a função
-  parabola = parabola_generica(x,a = -2, b = 20, c = -50)
-  f_x = parabola
-  return f_x
-  
-def mt_area(f,a,b,dx):
-  '''Escreva aqui a descrição'''
-  #escreva aqui a função
-  n = 50
-  x = np.linspace(a, b, n + 1)
-  y = f(x)
-  y_dir = y[1:]
-  y_esq = y[:-1]
-  dx = (b - a)/ n
-  t_integration = dx/2 * np.sum(y_dir, y_esq)
-  return t_integration
-
-
-  
+option=input('Testa parábola (S/N)? ')
+if option=='S':
+    p = int(input('Qual parábola? '))
+    if p ==1:
+        x=float(input('x: '))
+        print('%.2f'%mc.parabola1(x))
+    elif p ==2:
+        x=float(input('x: '))
+        print('%.2f'%mc.parabola2(x))
+    elif p ==3:
+        x=float(input('x: '))
+        print('%.2f'%mc.parabola3(x))
+        
+option=input('Testa área (S/N)? ')
+if option=='S':
+    p = int(input('Qual parabola? '))
+    a=float(input('a: '))
+    b=float(input('b: '))
+    dx=float(input('dx: '))
+    print('Área: ',end='')
+    if p ==1:
+        print('%.2f'%mc.mt_area(mc.parabola1,a,b,dx))
+    elif p ==2:
+        print('%.2f'%mc.mt_area(mc.parabola2,a,b,dx))
+    elif p ==3:
+        print('%.2f'%mc.mt_area(mc.parabola3,a,b,dx))
