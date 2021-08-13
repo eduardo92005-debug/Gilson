@@ -7,7 +7,7 @@ Além das funções do enunciado você pode colocar outras funções auxiliares 
 def reta_generica(x,a=0,b=0):
   '''Escreva aqui a descrição'''
   #escreva aqui a função
-  reta =  a*x + b
+  reta = a*x + b
   f_x = reta
   return f_x
 
@@ -40,16 +40,18 @@ def reta4(x):
   return f_x
   
 def trapezio_area(f,a,b):
-  '''Escreva aqui a descrição'''
-  #escreva aqui a função - cuidado com valores negativos
-  cortes = 50 #iteracoes
-  x = np.linspace(a, b, cortes + 1)
-  y = f(x)
-  y_dir = y[1:]
-  y_esq = y[:-1]
-  infinitesimal = (b - a) / cortes
-  area = (infinitesimal / 2) * np.sum(y_dir + y_esq)
-  return area
+    try:
+        N = 50
+        x = np.linspace(a,b, N + 1)
+        y = f(x)
+        y_esq = y[:-1]
+        y_dir = y[1:]
+        dx = (b - a) / N
+        area = (dx/2) * np.sum(y_esq + y_dir)
+        return area
+    except:
+        return f
+        
   
 def pontos2D(f,a,b,dist):
   '''Escreva aqui a descrição'''
