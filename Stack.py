@@ -1,9 +1,9 @@
 class ErrorHandling:
-    pass
+    " A class to handle errors"
 class Empty(ErrorHandling, Exception):
-    pass
-
+    "A subclass error"
 class Stack:
+    "Implements a stack in python code"
     def __init__(self):
         self.__stack = []
     def push(self, item):
