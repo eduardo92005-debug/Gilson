@@ -169,7 +169,7 @@ class FilaUnica:
         return f'Fila: {self.__start.item[0]} {self.__start.item[1]}'
 
 
-fila_hospital = FilaUnica()
+'''fila_hospital = FilaUnica()
 fila = FilaUnica()
 global paciente
 while True:
@@ -198,7 +198,7 @@ while True:
     else:
         print('A opção não é válida.')
 
-    '''except:
+    except:
         print('===== Opções: =====')
         print('0: sair')
         print('1: criar paciente')
@@ -207,7 +207,32 @@ while True:
         print('4: insere paciente criado na Fila Unica')
         print('5: remove um paciente da fila')
         print('6: localiza paciente')
-        print('7: mostra fila unica')'''
+        print('7: mostra fila unica')
+'''
+G = Graph()
+G.read_graph('./graphs.txt','. ')
+G.add_edge('Hospital do Servidor', 'PSM Bandeirantes')
+G.add_edge('Hospital do Servidor', 'PSM Barra Funda')
+G.add_edge('Hospital do Servidor', 'HM Mooca')
+G.add_edge('PSM Barra Funda', 'PSM Freguesia')
+G.add_edge('PSM Barra Funda', 'HM Mooca')
+G.add_edge('PSM Barra Funda', 'PSM Pirituba')
+G.add_edge('PSM Barra Funda', 'HM Vila Maria')
+G.add_edge('HM Cachoeirinha', 'PSM Pirituba')
+G.add_edge('PSM Perus', 'PSM Pirituba')
+G.add_edge('PSM Perus', 'PSM Sao Jose')
+G.add_edge('PSM Perus', 'HM Sao Joao')
+G.add_edge('HM Tatuape', 'HM Vila Maria')
+G.add_edge('PSM Lapa', 'HM MBoi Mirim')
+G.add_edge('HM Saboya', 'HM MBoi Mirim')
+G.add_edge('HM Mooca', 'HM Tatuape')
+G.add_edge('HM Mooca', 'HM Cidade Tiradentes')
+G.add_edge('HM Mooca', 'HM Itaquera')
+G.add_edge('HM Sao Miguel', 'HM Itaquera')
+G.add_edge('HM Emelino Matarazzo', 'HM Itaquera')
+G.add_edge('PSM Guaianases', 'HM Itaquera')
+
+
 
 
 def testando():
