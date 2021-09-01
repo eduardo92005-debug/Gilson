@@ -1,0 +1,20 @@
+. Hospital do Servidor
+. PSM Barra Funda
+. HM Cidade Tiradentes
+. HM Ermelino Matarazzo
+. HM Itaquera
+. PSM Guaianases
+. HM Mooca
+. HM São Miguel
+. HM Tatuapé
+. HM Cachoeirinha
+. PSM Freguesia
+. PSM Pirituba
+. HM Vila Maria
+. PSM Bandeirantes
+. PSM Lapa
+. HM Saboya
+. HM M’Boi Mirim
+. PSM São José
+. PSM Perus
+. HM São João
