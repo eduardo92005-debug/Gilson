@@ -144,7 +144,15 @@ class FilaUnica:
         if self.__n == 0:
             self.__end = None
         return x
-
+    
+    def remove(self,data):
+        while True:
+            sai = self.dequeue()
+            if( sai != data):
+                self.enqueue(sai)
+            else:
+                break
+    
     def mostrar_fila(self):
         if self.is_empty():
             print('Fila vazia!')
@@ -169,7 +177,7 @@ class FilaUnica:
         return f'Fila: {self.__start.item[0]} {self.__start.item[1]}'
 
 
-'''fila_hospital = FilaUnica()
+fila_hospital = FilaUnica()
 fila = FilaUnica()
 global paciente
 while True:
@@ -190,14 +198,16 @@ while True:
         fila_hospital.insere(paciente)
         fila_hospital.mostrar_fila()
     elif opcao == 5:
-        pass
+        fila.remove('jucu')
     elif opcao == 6:
         pass
+    elif opcao == 7:
+        fila_hospital.mostrar_fila()
     elif opcao == 0:
         break
     else:
         print('A opção não é válida.')
-
+    '''
     except:
         print('===== Opções: =====')
         print('0: sair')
@@ -208,7 +218,7 @@ while True:
         print('5: remove um paciente da fila')
         print('6: localiza paciente')
         print('7: mostra fila unica')
-'''
+    '''
 G = Graph()
 G.read_graph('./graphs.txt','. ')
 G.add_edge('Hospital do Servidor', 'PSM Bandeirantes')
@@ -248,7 +258,7 @@ def testando():
     qu.insere(pac3.id)
     qu.mostrar_fila()
     qu.localiza(3)
-    '''
+    
     G = Graph()
     for v in ['v1','v2','v3']:
         G.add_vertex(v)
